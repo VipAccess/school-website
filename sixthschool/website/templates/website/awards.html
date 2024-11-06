@@ -1,0 +1,15 @@
+{% extends "website/index.html" %}
+{% block Title %}
+    <title>Награды</title>
+{% endblock %}
+{% block content1 %}
+    <h1>Дипломы и награды</h1>
+    {% for award in awards %}
+<div>
+    <img src="{{award.photo.url}}">
+    <h3>{{ award.award_name }}</h3>
+    <p>{{ award.info }}</p>
+
+</div>
+    {% endfor %}
+{% endblock %}

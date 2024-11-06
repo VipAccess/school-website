@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block Title %}
+     <title>СШ6</title>
+    {% endblock %}
+</head>
+    <body>
+        <header> <!-- Заголовок -->
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'news' %}">Новости школы</a></li>
+                    <li><a href="{% url 'teachers' %}">Преподаватели</a></li>
+                    <li><a href="{% url 'contacts' %}">Контактная информация</a></li>
+                    <li><a href="{% url 'awards' %}">Награды</a></li>
+                    <li><a href="{% url 'licenses' %}">Лицензии</a></li>
+                    <li><a href="{% url 'documents' %}">Документы</a></li>
+                    <li><a href="{% url 'ask_a_question' %}">Задать вопрос</a></li>
+                    <li><a href="{% url 'request_for_admission' %}">Заявка на поступление</a></li>
+                </ul>
+                <ul>
+                {% if user.is_authenticated %}
+                <li>{{user.username}} | <a href="../users/logout">Выйти</a></li>
+                {% else %}
+                <li><a href="../users/login">Войти</a>|<a href="../users/register">Регистрация</a></li>
+                {% endif %}
+                </ul>
+            </div>
+        </header>
+        {%block content1 %}
+        {% endblock %}
+        <footer> <!-- Футер -->
+            <b>Информация</b>
+            <p>ООО "Средняя школа N6"</p>
+            <p>УНП: 191712412419</p>
+            <p>Телефон: +375297777777</p>
+            <p>Адрес: пр. Независимости, 4, г. Минск, Республика Беларусь, 220030</p>
+            <br/>
+            <a href="https://welcome.stepik.org/ru/privacy?_ga=2.17887993.1791737501.1724946146-1819671542.1707327670">Политика конфиденциальности</a>
+        </footer>
+    </body>
+</html>

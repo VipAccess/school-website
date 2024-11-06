@@ -1,0 +1,16 @@
+{% extends "website/index.html" %}
+{% block Title %}
+    <title>Преподаватели</title>
+{% endblock %}
+{% block content1 %}
+    {% for teacher in teachers %}
+<div>
+    <h1><a href="{% url 'teacher' teacher.teacher_id %}">{{ teacher.full_name }}</a></h1>
+     <img src="{{teacher.photo.url}}">
+            <p>Должность: {{ teacher.position }}</p>
+            <p>Контактный телефон: {{ teacher.contact_phone }}</p>
+            <p>Адрес электронной почты: {{ teacher.email }}</p>
+
+</div>
+    {% endfor %}
+{% endblock %}

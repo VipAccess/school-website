@@ -1,0 +1,12 @@
+{% extends "website/index.html" %}
+{% block Title %}
+    <title>Задать вопрос</title>
+{% endblock %}
+{% block content1 %}
+    <h1>Задать вопрос</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button type="submit">Отправить</button></p>
+</form>
+{% endblock %}

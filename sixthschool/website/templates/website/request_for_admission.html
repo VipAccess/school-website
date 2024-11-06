@@ -1,0 +1,12 @@
+{% extends "website/index.html" %}
+{% block Title %}
+    <title>Заявка на поступление</title>
+{% endblock %}
+{% block content1 %}
+    <h1>Заявка на поступление</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button type="submit">Отправить</button></p>
+</form>
+{% endblock %}

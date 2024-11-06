@@ -1,0 +1,25 @@
+{% extends "website/index.html" %}
+{% block Title %}
+    <title>{{ teacher.full_name }}</title>
+{% endblock %}
+{% block content1 %}
+    <div>
+    <h1>{{ teacher.full_name }}</h1>
+     <img src="{{teacher.photo.url}}">
+            <p>Должность: {{ teacher.position }}</p>
+            <p>Уровень образования: {{ teacher.education_level }}</p>
+            <p>Квалификация: {{ teacher.qualification }}</p>
+            <p>Ученая степень: {{ teacher.degree }}</p>
+            <p>Ученое звание: {{ teacher.academic_rank }}</p>
+            <p>Сведения о повышении квалификации и (или) профессиональной переподготовке:
+                {{ teacher.advanced_training_info }}</p>
+            <p>Сведения о профессиональной переподготовке (при наличии):
+                {{ teacher.professional_retraining_info }}</p>
+            <p>Сведения о продолжительности опыта (лет) работы в профессиональной сфере:
+                {{ teacher.experience }}</p>
+            <p>Контактный телефон: {{ teacher.contact_phone }}</p>
+            <p>Адрес электронной почты: {{ teacher.email }}</p>
+            <p>Образовательные программы: {{ teacher.educational_programs }}</p>
+            <p>Перечень преподаваемых дисциплин: {{ teacher.get_discipline }}</p>
+</div>
+{% endblock %}

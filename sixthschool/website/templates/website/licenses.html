@@ -1,0 +1,15 @@
+{% extends "website/index.html" %}
+{% block Title %}
+    <title>Лицензии</title>
+{% endblock %}
+{% block content1 %}
+     <h1>Лицензии</h1>
+    {% for license in licenses %}
+<div>
+    <img src="{{license.photo.url}}">
+    <h3>{{ license.licenses_name }}</h3>
+    <p>{{ license.info }}</p>
+
+</div>
+    {% endfor %}
+{% endblock %}

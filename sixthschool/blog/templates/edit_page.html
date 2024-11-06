@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page - {{ page.title }}</title>
+</head>
+<body>
+    <h1>Edit Page - {{ page.title }}</h1>
+
+    <h2>Add Content Block</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ block_form.as_p }}
+        <button type="submit">Add Block</button>
+    </form>
+
+    <h2>Existing Content Blocks</h2>
+    <ul>
+        {% for block in content_blocks %}
+            <li>{{ block.get_block_type_display }}: {{ block.content }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
