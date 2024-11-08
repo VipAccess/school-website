@@ -1,25 +1,37 @@
 {% extends "website/index.html" %}
 {% block Title %}
-    <title>{{ teacher.full_name }}</title>
+<title>{{ teacher.full_name }}</title>
 {% endblock %}
 {% block content1 %}
-    <div>
-    <h1>{{ teacher.full_name }}</h1>
-     <img src="{{teacher.photo.url}}">
-            <p>Должность: {{ teacher.position }}</p>
-            <p>Уровень образования: {{ teacher.education_level }}</p>
-            <p>Квалификация: {{ teacher.qualification }}</p>
-            <p>Ученая степень: {{ teacher.degree }}</p>
-            <p>Ученое звание: {{ teacher.academic_rank }}</p>
-            <p>Сведения о повышении квалификации и (или) профессиональной переподготовке:
-                {{ teacher.advanced_training_info }}</p>
-            <p>Сведения о профессиональной переподготовке (при наличии):
-                {{ teacher.professional_retraining_info }}</p>
-            <p>Сведения о продолжительности опыта (лет) работы в профессиональной сфере:
-                {{ teacher.experience }}</p>
-            <p>Контактный телефон: {{ teacher.contact_phone }}</p>
-            <p>Адрес электронной почты: {{ teacher.email }}</p>
-            <p>Образовательные программы: {{ teacher.educational_programs }}</p>
-            <p>Перечень преподаваемых дисциплин: {{ teacher.get_discipline }}</p>
+<div class="container">
+<div class="card mb-3" style="max-width: 1040px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{teacher.photo.url}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title">{{ teacher.full_name }}</h3>
+                <ul>
+                <li class="card-text"><b>Должность: </b> {{ teacher.position }}</li>
+                <li class="card-text"><b>Уровень образования: </b> {{ teacher.education_level }}</li>
+                <li class="card-text"><b>Квалификация: </b> {{ teacher.qualification }}</li>
+                <li class="card-text"><b>Ученая степень: </b> {{ teacher.degree }}</li>
+                <li class="card-text"><b>Ученое звание: </b> {{ teacher.academic_rank }}</li>
+                <li class="card-text"><b>Сведения о повышении квалификации и (или) профессиональной переподготовке: </b>
+                    {{ teacher.advanced_training_info }}</li>
+                <li class="card-text"><b>Сведения о профессиональной переподготовке (при наличии): </b>
+                    {{ teacher.professional_retraining_info }}</li>
+                <li class="card-text"><b>Сведения о продолжительности опыта (лет) работы в профессиональной сфере: </b>
+                    {{ teacher.experience }}</li>
+                <li class="card-text"><b>Контактный телефон: </b> {{ teacher.contact_phone }}</li>
+                <li class="card-text"><b>Адрес электронной почты: </b> {{ teacher.email }}</li>
+                <li class="card-text"><b>Образовательные программы: </b> {{ teacher.educational_programs }}</li>
+                <li class="card-text"><b>Перечень преподаваемых дисциплин: </b> {{ teacher.get_discipline }}</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
 </div>
+    </div>
 {% endblock %}

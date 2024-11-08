@@ -3,5 +3,10 @@
     <title>Новости школы</title>
 {% endblock %}
 {% block content1 %}
-    <h1>Новости школы</h1>
+<h1>Новости школы</h1>
+{% for news in data %}
+<h4><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h4>
+<a href=""><img src="{{ news.image.url}}" alt=""></a>
+{{ news.info}}
+{% endfor %}
 {% endblock %}

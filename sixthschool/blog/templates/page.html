@@ -1,0 +1,20 @@
+{% extends "website/index.html" %}
+{% block Title %}
+<title>{{ post.title }}</title>
+{% endblock %}
+{% block content1 %}
+{% for el in elements %}
+<div style="color: {{ el.color }}">
+    {% for o in el.tag_open %}
+{{ o |safe}}
+    {% endfor %}
+    {{ el.content }}
+    {% for o in el.tag_close %}
+{{ o |safe}}
+    {% endfor %}
+{{ el.type }}
+{{ el.image }}
+{{ el.url }}
+{% endfor %}
+{% endblock %}
+</div>

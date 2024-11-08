@@ -1,0 +1,114 @@
+html {
+font-size: 16px;
+}
+
+body {
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
+font-weight: 400px;
+color: #000;
+background-color: #fff;
+min-width: 320px;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+section {
+padding: 50px 0;
+}
+
+a {
+color: #20c997;
+}
+
+a:hover {
+color: green;
+}
+
+.navbar-nav .nav-link {
+font-weight: 500px;
+text-transform: uppercase;
+}
+
+.navbar-nav .dropdown-menu  {
+right: 0;
+left: auto;
+}
+
+.navbar-nav li a:hover {
+color: white;
+}
+
+.navbar-nav li a {
+color: #20c997;
+}
+
+/* Teacher card*/
+.teacher-card {
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+transition: all .3s;
+}
+
+.teacher-card:hover {
+box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+.teacher-thumb a {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 200px;
+padding: 20px;
+}
+
+.teacher-thumb img {
+max-width: 100%;
+max-height: 100%;}
+
+.teacher-details {
+padding: 20px;
+}
+
+.teacher-details h4 a {
+font-weight: 500px;
+display: block;
+height: 60px;
+overflow: hidden;
+text-decoration: none;
+}
+/* Teacher card */
+.footer {
+background-color: #343434;
+}
+
+.footer h4 {
+color: #ccc;
+text-transform: uppercase;
+font-size: 16px;
+border-bottom: 1px solid #666;
+padding-bottom: 3px;
+}
+
+.footer a {
+text-decoration: none;
+transition: all .3s;
+}
+
+.footer li {
+color: white}
+
+.footer li a {
+display: block}
+
+.footer-icons a {
+display: inline-block;
+margin-right: 15px;
+font-size: 25px;
+}
+/* Footer */
+
+
+/* Teacher card */

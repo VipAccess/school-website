@@ -3,14 +3,39 @@
     <title>Преподаватели</title>
 {% endblock %}
 {% block content1 %}
-    {% for teacher in teachers %}
-<div>
-    <h1><a href="{% url 'teacher' teacher.teacher_id %}">{{ teacher.full_name }}</a></h1>
-     <img src="{{teacher.photo.url}}">
-            <p>Должность: {{ teacher.position }}</p>
-            <p>Контактный телефон: {{ teacher.contact_phone }}</p>
-            <p>Адрес электронной почты: {{ teacher.email }}</p>
-
-</div>
-    {% endfor %}
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            {% for teacher in teachers %}
+            <div class="col-lg-4 .col-sm-6">
+                <div class="teacher-card">
+                    <div class="teacher-thumb">
+                        <a href=""><img src="{{teacher.photo.url}}" alt=""></a>
+                    </div>
+                    <div class="teacher-details">
+                        <h4><a href="{% url 'teacher' teacher.teacher_id %}">{{ teacher.full_name }}</a></h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ teacher.position }}</h6>
+                        <p class="card-text"><b>Предметы:</b> {{ teacher.get_discipline }}</p>
+                        <p class="card-text"><b>Телефон:</b> {{ teacher.contact_phone }}</p>
+                        <p class="card-text"><b>Электронный адрес:</b> {{ teacher.email }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}
+
+
+
+    <div class="card border-secondary mb-3" style="width: 20rem h-100;">
+    <img src="{{teacher.photo.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title text-white"><a href="{% url 'teacher' teacher.teacher_id %}">{{ teacher.full_name }}</a></h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ teacher.position }}</h6>
+    <p class="card-text"><b>Предметы:</b> {{ teacher.get_discipline }}</p>
+    <p class="card-text"><b>Телефон:</b> {{ teacher.contact_phone }}</p>
+    <p class="card-text"><b>Электронный адрес:</b> {{ teacher.email }}</p>
+    </div>
+    </div>

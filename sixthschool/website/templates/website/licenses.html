@@ -3,13 +3,18 @@
     <title>Лицензии</title>
 {% endblock %}
 {% block content1 %}
-     <h1>Лицензии</h1>
+<h1>Лицензии</h1>
+<div class="row row-cols-1 row-cols-md-5 g-4">
     {% for license in licenses %}
-<div>
-    <img src="{{license.photo.url}}">
-    <h3>{{ license.licenses_name }}</h3>
-    <p>{{ license.info }}</p>
-
+<div class="col">
+    <div class="card border-secondary mb-3 h-100" style="width: 20rem;">
+    <img src="{{license.photo.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title text-black">{{ license.licenses_name }}</h5>
+    <p class="card-text">{{ license.info }}</p>
+    </div>
+    </div>
 </div>
     {% endfor %}
+</div>
 {% endblock %}

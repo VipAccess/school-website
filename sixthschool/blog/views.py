@@ -1,6 +1,8 @@
-from http.client import HTTPResponse
+from django.shortcuts import render, redirect, get_object_or_404
 
-from django.shortcuts import render, redirect
+from .models import ContentBlocks, Options, Publications, Colors
+
+
 # from .forms import PageForm, ContentBlockForm
 # from .models import Publications
 
@@ -36,5 +38,27 @@ def edit_page(request, page_id):
     # })
 
 def news(request):
-    #data = Publications.objects.all()
-    return render(request, 'news.html')
+    data = Publications.objects.all()
+    return render(request, 'news.html', {'data': data})
+
+def page(request, slug):
+    post = get_object_or_404(Publications, slug=slug)
+    elements = ContentBlocks.objects.filter(page=post.page_id)
+
+    data = list(map(test, elements))
+    return render(request, 'page.html', {'elements': data, 'post': post})
+
+def test(elem):
+    result = dict()
+    result['type'] = elem.block_type
+    result['content'] = elem.content
+    result['color'] = Colors.objects.get(name=elem.color).code
+    result['image'] = elem.image
+    result['url'] = elem.url
+    result['npp'] = elem.npp
+    result['tag_open'] = []
+    result['tag_close'] = []
+    for el in elem.options.all():
+        result.setdefault('tag_open', []).append(el.tag_open)
+        result.setdefault('tag_close', []).insert(0, el.tag_close)
+    return result
