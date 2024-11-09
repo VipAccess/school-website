@@ -46,16 +46,17 @@ def page(request, slug):
     elements = ContentBlocks.objects.filter(page=post.page_id)
 
     data = list(map(test, elements))
+    print(data)
     return render(request, 'page.html', {'elements': data, 'post': post})
 
 def test(elem):
     result = dict()
-    result['type'] = elem.block_type
     result['content'] = elem.content
-    result['color'] = Colors.objects.get(name=elem.color).code
+    if elem.color is None:
+        result['color'] = '#000000'
+    else:
+        result['color'] = Colors.objects.get(name=elem.color).code
     result['image'] = elem.image
-    result['url'] = elem.url
-    result['npp'] = elem.npp
     result['tag_open'] = []
     result['tag_close'] = []
     for el in elem.options.all():

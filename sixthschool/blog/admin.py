@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publications, Options, BlockTypes, ContentBlocks, Colors
+from .models import Publications, Options, ContentBlocks, Colors
 
 @admin.register(Publications)
 class PublicationsAdmin(admin.ModelAdmin):
@@ -7,15 +7,11 @@ class PublicationsAdmin(admin.ModelAdmin):
 
 @admin.register(Options)
 class OptionsAdmin(admin.ModelAdmin):
-    list_display = ['name', 'tag_open', 'tag_close']
-
-@admin.register(BlockTypes)
-class BlockTypesAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'tag_open', 'tag_close', 'npp']
 
 @admin.register(ContentBlocks)
 class ContentBlocksAdmin(admin.ModelAdmin):
-    list_display = ['page', 'block_type', 'content', 'color', 'image', 'url', 'npp', 'get_option']
+    list_display = ['page', 'content', 'color', 'image', 'get_option']
 
 @admin.register(Colors)
 class ColorsAdmin(admin.ModelAdmin):

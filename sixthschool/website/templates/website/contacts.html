@@ -1,20 +1,28 @@
 {% extends "website/index.html" %}
 {% block Title %}
-    <title>Контактная информация</title>
+<title>Контактная информация</title>
 {% endblock %}
 {% block content1 %}
-    <h1>Контактная информация</h1>
-<div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/org/shkola_6/1086794671/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Школа № 6</a><a href="https://yandex.by/maps/26951/slutsk/category/school/184106240/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Общеобразовательная школа в Слуцке</a><iframe src="https://yandex.by/map-widget/v1/org/shkola_6/1086794671/?indoorLevel=1&ll=27.554594%2C53.030860&z=17.2" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-<h3>Управление по образованию Слуцкого районного исполнительного комитета
-Государственное учреждение образования
-"Средняя школа №6 г.Слуцка</h3>
-    <h1>Контакты для справок:</h1>
-    {% for contact in contacts %}
-<div>
-    <h3>{{ contact.full_name }}</h3>
-    <p>Должность: {{ contact.position }}</p>
-    <p>Email: {{ contact.email }}</p>
-    <p>Телефон для связи: {{ contact.phone }}</p>
-</div>
-    {% endfor %}
+        <h1>Контактная информация</h1>
+        <div style="position:relative;overflow:hidden; max-width: 100%"><a
+                href="https://yandex.by/maps/org/shkola_6/1086794671/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Школа № 6</a><a
+                href="https://yandex.by/maps/26951/slutsk/category/school/184106240/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Общеобразовательная школа в Слуцке</a>
+            <iframe src="https://yandex.by/map-widget/v1/org/shkola_6/1086794671/?indoorLevel=1&ll=27.554594%2C53.030860&z=17.2"
+                    width="100%" height="300px" frameborder="1" allowfullscreen="true"
+                    style="position:relative;"></iframe>
+        </div>
+        <h3>Управление по образованию Слуцкого районного исполнительного комитета
+            Государственное учреждение образования
+            "Средняя школа №6 г.Слуцка</h3>
+        <h1>Контакты для справок:</h1>
+        {% for contact in contacts %}
+        <div>
+            <h3>{{ contact.full_name }}</h3>
+            <p>Должность: {{ contact.position }}</p>
+            <p>Email: {{ contact.email }}</p>
+            <p>Телефон для связи: {{ contact.phone }}</p>
+        </div>
+        {% endfor %}
 {% endblock %}

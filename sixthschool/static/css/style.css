@@ -80,6 +80,8 @@ overflow: hidden;
 text-decoration: none;
 }
 /* Teacher card */
+
+/* Footer */
 .footer {
 background-color: #343434;
 }
@@ -111,4 +113,60 @@ font-size: 25px;
 /* Footer */
 
 
-/* Teacher card */
+/* news-card */
+
+.styled-quote {
+  border: none;
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 10px 0;
+  background-color: grey;
+}
+.styled-quote p {
+  font-size: 1px;
+  font-style: italic;
+}
+.styled-quote footer {
+  margin-top: 10px;
+  text-align: right;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.blockquote-6 {
+    border-left: 6px solid #BFE2FF;
+    font-size: 16px;
+    font-style: italic;
+    margin: 16px;
+    padding: 16px 24px;
+    position: relative;
+}
+.blockquote-6:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    height: 40px;
+    background-color: #fff;
+    width: 6px;
+    margin-top: -1em;
+}
+.blockquote-6:after {
+    content: "”";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    color: #337AB7;
+    font-size: 50px;
+    font-family: Times, sans-serif;
+    font-weight: bold;
+    line-height: 30px;
+}
+.blockquote-6 cite {
+    color: #337AB7;
+    font-size: 15px;
+    padding-top: 10px;
+    display: block;
+    text-align: right;
+}
+
