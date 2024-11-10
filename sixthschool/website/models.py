@@ -123,10 +123,10 @@ class Contacts(models.Model):
 class Questions(models.Model):
     """Модель задаваемых вопросов"""
     CATEGORY_CHOICES = (
-        ('1', 'Общие вопросы'),
-        ('2', 'Платные услуги'),
-        ('3', 'Поступление'),
-        ('4', 'Питание'),
+        ('Общие вопросы', 'Общие вопросы'),
+        ('Платные услуги', 'Платные услуги'),
+        ('Поступление', 'Поступление'),
+        ('Питание', 'Питание'),
     )
     question_id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     category =  models.CharField(max_length=20, choices=CATEGORY_CHOICES, verbose_name='Категория')

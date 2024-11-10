@@ -9,4 +9,8 @@
     {{ form.as_p }}
     <p><button type="submit">Отправить</button></p>
 </form>
+
+{% if user.is_staff %}
+<a href="{% url 'download_questions' %}" class="btn btn-success">Скачать вопросы</a>
+{% endif %}
 {% endblock %}

@@ -3,7 +3,9 @@
 <title>Контактная информация</title>
 {% endblock %}
 {% block content1 %}
-        <h1>Контактная информация</h1>
+<h5>Управление по образованию Слуцкого районного исполнительного комитета
+            Государственное учреждение образования
+            "Средняя школа №6 г.Слуцка</h5>
         <div style="position:relative;overflow:hidden; max-width: 100%"><a
                 href="https://yandex.by/maps/org/shkola_6/1086794671/?utm_medium=mapframe&utm_source=maps"
                 style="color:#eee;font-size:12px;position:absolute;top:0px;">Школа № 6</a><a
@@ -13,16 +15,14 @@
                     width="100%" height="300px" frameborder="1" allowfullscreen="true"
                     style="position:relative;"></iframe>
         </div>
-        <h3>Управление по образованию Слуцкого районного исполнительного комитета
-            Государственное учреждение образования
-            "Средняя школа №6 г.Слуцка</h3>
-        <h1>Контакты для справок:</h1>
+
+        <h4>Контакты для справок:</h4>
         {% for contact in contacts %}
-        <div>
-            <h3>{{ contact.full_name }}</h3>
-            <p>Должность: {{ contact.position }}</p>
-            <p>Email: {{ contact.email }}</p>
-            <p>Телефон для связи: {{ contact.phone }}</p>
+        <div class="teacher-details">
+            <h5>{{ contact.full_name }}</h5>
+            <p><b>Должность:</b> {{ contact.position }}</p>
+            <p><b>Email:</b> {{ contact.email }}</p>
+            <p><b>Телефон для связи:</b> {{ contact.phone }}</p>
         </div>
         {% endfor %}
 {% endblock %}

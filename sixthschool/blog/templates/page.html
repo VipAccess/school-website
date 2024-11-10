@@ -5,19 +5,20 @@
 {% block content1 %}
 <div class="row row-cols-12 row-cols-md-12 g-4">
     {% for el in elements %}
-    <div class="col-12 col-sm-12 d-flex justify-content-center align-items-center clearfix visible-xs " style="color: {{ el.color }}">
-            {% for o in el.tag_open %}
-            {{ o | safe}}
-            {% endfor %}
-            {% if el.content %}
-            {{ el.content | safe }}
-            {% endif %}
-            {% if el.image %}
-            <img src="{{ el.image.url }}" class="img-fluid w-100 " alt="card-horizontal-image"
-                 style="max-height: 500px; max-width: 700px;">
-            {% endif %}
-            {% for o in el.tag_close %}
-            {{ o | safe}}
+    <div class="col-12 col-sm-12 d-flex justify-content-center align-items-center clearfix visible-xs "
+         style="color: {{ el.color }}">
+        {% for o in el.tag_open %}
+        {{ o | safe}}
+        {% endfor %}
+        {% if el.content %}
+        {{ el.content | safe }}
+        {% endif %}
+        {% if el.image %}
+        <img src="{{ el.image.url }}" class="img-fluid w-100 " alt="card-horizontal-image"
+             style="max-height: 500px; max-width: 700px;">
+        {% endif %}
+        {% for o in el.tag_close %}
+        {{ o | safe}}
         {% endfor %}
     </div>
     {% endfor %}

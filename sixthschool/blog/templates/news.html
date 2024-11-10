@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content1 %}
     <div class="row row-cols-1 row-cols-md-1 g-4">
-{% for news in data %}
+{% for news in page_obj %}
 <div class="card shadow-lg p-3 mb-5 bg-body rounded">
     <div class="row g-0">
         <div class="col-5 col-sm-4">
@@ -21,5 +21,34 @@
     </div>
 </div>
 {% endfor %}
-</div>
+    </div>
+
+{% if page_obj.has_other_pages %}
+<p class="text-center">
+     Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+</p>
+<nav aria-label="Page navigation bootstrap">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">Первая страница</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><span
+                aria-hidden="true">&laquo;</span></a></li>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <li class="page-item active" aria-current="page"><span class="page-link">{{ num }}</span>
+        </li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"><span
+                aria-hidden="true">&raquo;</span></a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Последняя страница</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 {% endblock %}
